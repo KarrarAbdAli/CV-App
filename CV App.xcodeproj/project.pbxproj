@@ -14,6 +14,10 @@
 		C70EF18F242BE94F00061FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70EF18E242BE94F00061FCF /* Assets.xcassets */; };
 		C70EF192242BE94F00061FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70EF190242BE94F00061FCF /* LaunchScreen.storyboard */; };
 		C70EF19C242C098B00061FCF /* TitleField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70EF19B242C098B00061FCF /* TitleField.swift */; };
+		C70EF19E242C0C1500061FCF /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70EF19D242C0C1500061FCF /* Experience.swift */; };
+		C70EF1C0242C136900061FCF /* Strength.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70EF1BF242C136900061FCF /* Strength.swift */; };
+		C70EF1C2242C13E300061FCF /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70EF1C1242C13E300061FCF /* Language.swift */; };
+		C70EF1C4242C164D00061FCF /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70EF1C3242C164D00061FCF /* Education.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		C70EF191242BE94F00061FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C70EF193242BE94F00061FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C70EF19B242C098B00061FCF /* TitleField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleField.swift; sourceTree = "<group>"; };
+		C70EF19D242C0C1500061FCF /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		C70EF1BF242C136900061FCF /* Strength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strength.swift; sourceTree = "<group>"; };
+		C70EF1C1242C13E300061FCF /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		C70EF1C3242C164D00061FCF /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				C70EF19B242C098B00061FCF /* TitleField.swift */,
+				C70EF19D242C0C1500061FCF /* Experience.swift */,
+				C70EF1BF242C136900061FCF /* Strength.swift */,
+				C70EF1C1242C13E300061FCF /* Language.swift */,
+				C70EF1C3242C164D00061FCF /* Education.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,8 +170,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70EF18A242BE94D00061FCF /* ViewController.swift in Sources */,
+				C70EF1C0242C136900061FCF /* Strength.swift in Sources */,
 				C70EF19C242C098B00061FCF /* TitleField.swift in Sources */,
+				C70EF1C2242C13E300061FCF /* Language.swift in Sources */,
+				C70EF19E242C0C1500061FCF /* Experience.swift in Sources */,
 				C70EF186242BE94D00061FCF /* AppDelegate.swift in Sources */,
+				C70EF1C4242C164D00061FCF /* Education.swift in Sources */,
 				C70EF188242BE94D00061FCF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
