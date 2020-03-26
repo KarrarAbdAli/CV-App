@@ -1,5 +1,5 @@
 //
-//  TitleField.swift
+//  Title.swift
 //  CV App
 //
 //  Created by Karrar Abd Ali on 25/03/2020.
@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class TitleField{
+class Title: Decodable{
     let nameAndSurname: String
     var jobTitle: String?
     var email: String?

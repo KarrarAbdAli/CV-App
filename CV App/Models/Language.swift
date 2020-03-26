@@ -7,21 +7,13 @@
 //
 
 import Foundation
-class Language {
+class Language: Decodable {
     var name: String
-    var level: languageLevel
+    var level: Int
     var isNative: Bool
-    init(name: String, level: languageLevel, isNative: Bool = false){
+    init(name: String, level: Int, isNative: Bool = false){
         self.name = name
         self.level = level
         self.isNative = isNative
     }
-}
-
-enum languageLevel{
-    case basic1
-    case basic2
-    case intermediate
-    case advance
-    case fluent
 }

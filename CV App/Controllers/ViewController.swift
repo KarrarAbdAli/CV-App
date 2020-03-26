@@ -9,12 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let service = NetworkServices()
+    var cv: CV?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+      fetchingData()
     }
-
-
+    
+    private func fetchingData(){
+        service.fetchCVJsonData { (result) in
+            switch result{
+            case .success(let cv): self.cv = cv
+            case .failure(let error): self.dataFetchingErrorHundler(error: error)
+            }
+        }
+    }
+    
+    private func dataFetchingErrorHundler(error: Error){
+        let alert = UIAlertController(title: "Error", message: "An Error: \(error.localizedDescription) happend during detching data", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry Fetching Data", style: .default, handler: { _ in
+            self.fetchingData()
+        }))
+        
+    }
 }
-

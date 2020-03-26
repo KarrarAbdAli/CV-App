@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Strength{
+class Strength: Decodable{
     var cvItemTag: [String]
     init(cvItemTag: [String]){
         self.cvItemTag = cvItemTag

@@ -7,12 +7,12 @@
 //
 
 import Foundation
-class Education {
+class Education: Decodable {
     var degreeTitle: String
     var university: String
-    var startDate: Date
-    var endDate: Date?
-    init(degreeTitle: String, university: String, startDate: Date, endDate: Date?) {
+    var startDate: String
+    var endDate: String
+    init(degreeTitle: String, university: String, startDate: String, endDate: String) {
         self.degreeTitle = degreeTitle
         self.university = university
         self.startDate = startDate
