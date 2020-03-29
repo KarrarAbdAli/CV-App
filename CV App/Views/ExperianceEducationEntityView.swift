@@ -18,7 +18,8 @@ class ExperianceEducationEntityView: UIView {
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
         let randImageLogoNumber = Int.random(in: 1...3)
-        let image = UIImage(named: "logo")
+        let randomImageIndexNumber = Int(Float.random(in: 0.0...6.0))
+        let image = UIImage(named: "logo\(randomImageIndexNumber)")
         if let image = image {
             imageView.image = image
         }

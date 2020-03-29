@@ -97,29 +97,29 @@ class TitleFieldCell: UICollectionViewCell {
     
     private func updateLabelConstrains(){
         let halfUserImageDimention: CGFloat = 50
-        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: halfUserImageDimention + offset).isActive = true // userimage.bottom
-        nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: offset).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: halfUserImageDimention + offset).isActive = true 
+        nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: offset * 2).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
         
         jobAndCompanyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: offset).isActive = true
-        jobAndCompanyLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: offset).isActive = true
-        jobAndCompanyLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        jobAndCompanyLabel.leftAnchor.constraint(equalTo: nameLabel.leftAnchor).isActive = true
+        jobAndCompanyLabel.rightAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
         jobAndCompanyLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
         
         addressLabel.topAnchor.constraint(equalTo: jobAndCompanyLabel.bottomAnchor, constant: offset).isActive = true
-        addressLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: offset).isActive = true
-        addressLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        addressLabel.leftAnchor.constraint(equalTo: jobAndCompanyLabel.leftAnchor).isActive = true
+        addressLabel.rightAnchor.constraint(equalTo: jobAndCompanyLabel.rightAnchor).isActive = true
         addressLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
         
         educationLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: offset).isActive = true
-        educationLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: offset).isActive = true
-        educationLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        educationLabel.leftAnchor.constraint(equalTo: addressLabel.leftAnchor).isActive = true
+        educationLabel.rightAnchor.constraint(equalTo: addressLabel.rightAnchor).isActive = true
         educationLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
         
         emailLabel.topAnchor.constraint(equalTo: educationLabel.bottomAnchor, constant: offset).isActive = true
-        emailLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: offset).isActive = true
-        emailLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        emailLabel.leftAnchor.constraint(equalTo: educationLabel.leftAnchor).isActive = true
+        emailLabel.rightAnchor.constraint(equalTo: educationLabel.rightAnchor).isActive = true
         emailLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
     } 
 }

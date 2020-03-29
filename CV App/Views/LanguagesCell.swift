@@ -34,16 +34,16 @@ class LanguagesCell: UICollectionViewCell {
         label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
            label.textAlignment = .center
            label.text = "1"
-           label.textColor = .blue
+           label.textColor = .lightBlue
            label.translatesAutoresizingMaskIntoConstraints = false
            return label
        }()
-    lazy var languageTitleLabel: UILabel = {
+    lazy var languagesTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
         label.textAlignment = .left
         label.text = "Languages"
-        label.textColor = .blue
+        label.textColor = .lightBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -91,7 +91,7 @@ class LanguagesCell: UICollectionViewCell {
         contentView.addSubview(numberOfLanguagesLabel)
         contentView.addSubview(lineView)
         contentView.addSubview(motherLanguageLabel)
-        contentView.addSubview(languageTitleLabel)
+        contentView.addSubview(languagesTitleLabel)
         contentView.addSubview(nativeLanguageStatementLabel)
         
         cellTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: offset).isActive = true
@@ -104,15 +104,15 @@ class LanguagesCell: UICollectionViewCell {
         numberOfLanguagesLabel.widthAnchor.constraint(equalToConstant: 65).isActive = true
 
         
-        languageTitleLabel.leftAnchor.constraint(equalTo: numberOfLanguagesLabel.rightAnchor, constant: offset).isActive = true
-        languageTitleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        languageTitleLabel.topAnchor.constraint(equalTo: cellTitleLabel.bottomAnchor, constant: 2 * offset).isActive = true
-        languageTitleLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        languagesTitleLabel.leftAnchor.constraint(equalTo: numberOfLanguagesLabel.rightAnchor).isActive = true
+        languagesTitleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        languagesTitleLabel.topAnchor.constraint(equalTo: cellTitleLabel.bottomAnchor, constant: 2 * offset).isActive = true
+        languagesTitleLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
         
-        motherLanguageLabel.leadingAnchor.constraint(equalTo: languageTitleLabel.leadingAnchor).isActive = true
-        motherLanguageLabel.trailingAnchor.constraint(equalTo: languageTitleLabel.trailingAnchor).isActive = true
+        motherLanguageLabel.leadingAnchor.constraint(equalTo: languagesTitleLabel.leadingAnchor).isActive = true
+        motherLanguageLabel.trailingAnchor.constraint(equalTo: languagesTitleLabel.trailingAnchor).isActive = true
         motherLanguageLabel.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        motherLanguageLabel.topAnchor.constraint(equalTo: languageTitleLabel.bottomAnchor, constant: offset).isActive = true
+        motherLanguageLabel.topAnchor.constraint(equalTo: languagesTitleLabel.bottomAnchor, constant: offset).isActive = true
         
         nativeLanguageStatementLabel.leadingAnchor.constraint(equalTo: motherLanguageLabel.leadingAnchor).isActive = true
         nativeLanguageStatementLabel.trailingAnchor.constraint(equalTo: motherLanguageLabel.trailingAnchor).isActive = true

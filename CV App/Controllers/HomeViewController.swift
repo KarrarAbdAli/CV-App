@@ -80,8 +80,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let multiplier = cv?.experience.count {
             switch indexPath.item {
-            case 0: print(indexPath)
-            return CGSize(width: view.frame.width , height: view.frame.height * 0.2)
+            case 0:
+            return CGSize(width: view.frame.width , height: 160)
             case 1...2: return CGSize(width: view.frame.width , height: CGFloat((Int(view.frame.height)/multiplier) + 10 * multiplier))
             case 3: return CGSize(width: view.frame.width , height:90)
             default: return CGSize(width: view.frame.width , height: CGFloat((Int(view.frame.height)/multiplier) + 10 * multiplier))

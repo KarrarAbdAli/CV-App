@@ -43,7 +43,7 @@ class ExperienceEducationReusableCell: UICollectionViewCell {
     private lazy var entityHeight: CGFloat = {
         return self.frame.width * 0.2
     }()
-    private let offset: CGFloat = 10
+    private let offset: CGFloat = 5
     
     lazy var numberOfEntities: Int = {
         guard let type = cellTypeVariable,
@@ -98,7 +98,7 @@ class ExperienceEducationReusableCell: UICollectionViewCell {
         containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: offset).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: offset).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: offset * 2).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: offset).isActive = true
         
         var entities: [ExperianceEducationEntityView] = []
