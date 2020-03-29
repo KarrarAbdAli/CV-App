@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let layout = UICollectionViewFlowLayout()
-        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        let layout = StretchyHeaderLayout()//UICollectionViewFlowLayout()//
+        window?.rootViewController = UINavigationController(rootViewController: HomeViewController(collectionViewLayout: layout))
         window?.makeKeyAndVisible()
     }
     

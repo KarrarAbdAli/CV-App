@@ -9,15 +9,12 @@
 import Foundation
 class CV:Decodable{
     var title: Title
-    var experience: Experience
+    var experience: [Experience]
     var strength: Strength
     var Language: [Language]
-    var education: Education
-    init(title: Title
-        ,experience: Experience
-        ,strength: Strength
-        ,Language: [Language]
-        ,education: Education) {
+    var education: [Education]
+    
+    init(title: Title, experience: [Experience], strength: Strength, Language: [Language], education: [Education]) {
         self.title = title
         self.experience = experience
         self.strength = strength

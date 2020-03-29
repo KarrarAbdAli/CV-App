@@ -12,6 +12,7 @@ class Education: Decodable {
     var university: String
     var startDate: String
     var endDate: String
+    
     init(degreeTitle: String, university: String, startDate: String, endDate: String) {
         self.degreeTitle = degreeTitle
         self.university = university

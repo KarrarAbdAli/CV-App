@@ -11,6 +11,7 @@ class Language: Decodable {
     var name: String
     var level: Int
     var isNative: Bool
+    
     init(name: String, level: Int, isNative: Bool = false){
         self.name = name
         self.level = level

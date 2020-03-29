@@ -9,14 +9,15 @@
 import Foundation
 class Experience: Decodable{
     var jobTitle: String
-    var company: String?
+    var company: String
     var startDate: String
     var endDate: String
     var city: String
     var country: String
     var items: [String]
     
-    init(jobTitle: String, company: String?, startDate: String,endDate: String, city: String, country: String, items: [String]){
+    init(jobTitle: String, company: String, startDate: String,endDate: String, city: String, country: String, items: [String]){
+        
         self.jobTitle = jobTitle
         self.company = company
         self.startDate = startDate

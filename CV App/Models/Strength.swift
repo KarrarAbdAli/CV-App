@@ -9,6 +9,7 @@
 import Foundation
 class Strength: Decodable{
     var cvItemTag: [String]
+    
     init(cvItemTag: [String]){
         self.cvItemTag = cvItemTag
     }

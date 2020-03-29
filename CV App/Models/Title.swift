@@ -9,22 +9,16 @@
 import Foundation
 class Title: Decodable{
     let nameAndSurname: String
-    var jobTitle: String?
-    var email: String?
-    var phoneNumber: Int?
-    var address: String?
-    var linkedIn: String?
-    var skype: String?
-    var git: String?
-    init(nameAndSurname: String,
-         jobTitle: String? = nil,
-         email: String?,
-         phoneNumber: Int? = nil,
-         address: String? = nil,
-         linkedIn: String? = nil,
-         skype: String? = nil,
-         git: String? = nil) {
-        
+    var jobTitle: String
+    var email: String
+    var phoneNumber: Int
+    var address: String
+    var linkedIn: String
+    var skype: String
+    var git: String
+    
+    init(nameAndSurname: String, jobTitle: String, email: String, phoneNumber: Int, address: String , linkedIn: String, skype: String, git: String) {
+
         self.nameAndSurname = nameAndSurname
         self.jobTitle = jobTitle
         self.email = email
