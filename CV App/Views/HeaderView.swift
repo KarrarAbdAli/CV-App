@@ -10,8 +10,6 @@ import UIKit
 
 class HeaderView: UICollectionReusableView {
     //MARK: - Var and Views
-    var imageDimention: CGFloat = 100
-    var offset: CGFloat = 5
     
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()

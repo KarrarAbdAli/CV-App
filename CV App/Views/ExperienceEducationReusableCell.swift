@@ -18,45 +18,21 @@ class ExperienceEducationReusableCell: UICollectionViewCell {
     //MARK: - Variables
     var cv: CV? {
         didSet {
+            guard let type = cellTypeVariable else { return }
+            switch type {
+            case .Experience:
+                titleLabel.text = "Experience"
+            case .Education:
+                titleLabel.text = "Education"
+            }
+            
             setupViews()
         }
     }
     
-    var cellTypeVariable: CellType? {
-        didSet {
-            guard let type = cellTypeVariable,
-                let cv = cv else { return }
-            switch type {
-            case .Experience:
-                titleLabel.text = "Experience"
-                numberOfEntities = cv.experience.count
-            case .Education:
-                titleLabel.text = "Education"
-                numberOfEntities = cv.education.count
-            }
-        }
-    }
-    
-    lazy var imageDimention: CGFloat = {
-        return self.frame.width * 0.2
-    }()
-    private lazy var entityHeight: CGFloat = {
-        return self.frame.width * 0.2
-    }()
-    private let offset: CGFloat = 5
-    
-    lazy var numberOfEntities: Int = {
-        guard let type = cellTypeVariable,
-            let cv = cv else { return 3}
-        switch type {
-        case .Experience:
-            titleLabel.text = "Experience"
-            return cv.experience.count
-        case .Education:
-            titleLabel.text = "Education"
-            return cv.education.count
-        }
-    }()
+    var cellTypeVariable: CellType?
+    private var isViewsAdded = false
+
     //MARK: - Views
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -91,22 +67,26 @@ class ExperienceEducationReusableCell: UICollectionViewCell {
         addSubview(containerView)
         containerView.addSubview(titleLabel)
         
-        
         containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
-        titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: offset).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: offset * 2).isActive = true
-        titleLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: offset).isActive = true
-        
+        titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: ViewServices.offset).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: ViewServices.offset * 2).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: ViewServices.offset).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: ViewServices.labelHeight).isActive = true
         var entities: [ExperianceEducationEntityView] = []
+        
+        guard let cv = cv else {return}
+        
+        let numberOfEntities = (cellTypeVariable == .Experience) ? cv.experience.count : cv.education.count
+        
+        let entityHeight: CGFloat = ((contentView.frame.height - ViewServices.shortLabelHeight) - (CGFloat(numberOfEntities) * ViewServices.offset))/CGFloat(numberOfEntities)
         
         for number in 1...numberOfEntities {
             let index = number - 1
             var entity: ExperianceEducationEntityView?
-            guard let cv = cv else { return }
             
             switch cellTypeVariable {
             case .Education: entity = ExperianceEducationEntityView(frame: CGRect(x: 0,
@@ -127,17 +107,19 @@ class ExperienceEducationReusableCell: UICollectionViewCell {
                 print("NOT DEFINED CASE")
             }
             
-            if let entity = entity {
+            if !isViewsAdded ,
+                let entity = entity {
                 containerView.addSubview(entity)
                 entities.append(entity)
             }
         }
         for (index, entity) in entities.enumerated() {
             let topView = ((index == 0) ? titleLabel : entities[index - 1])
-            entity.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: offset).isActive = true
+            entity.topAnchor.constraint(equalTo: topView.bottomAnchor).isActive = true
             entity.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-            entity.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+            entity.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
             entity.heightAnchor.constraint(equalToConstant: entityHeight).isActive = true
         }
+        isViewsAdded = true
     }
 }

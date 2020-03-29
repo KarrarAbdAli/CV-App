@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "rocket-ship-logoa.jpg",
+      "filename" : "b-logoa.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "rocket-ship-logo.jpg",
+      "filename" : "b-logo.jpg",
       "scale" : "2x"
     },
     {

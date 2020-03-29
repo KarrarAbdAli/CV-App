@@ -10,9 +10,6 @@ import UIKit
 
 class TitleFieldCell: UICollectionViewCell {
     //MARK: - Variables
-    var imageDimention: CGFloat = 100
-    private var offset: CGFloat = 5
-    private var labelHeight: CGFloat = 15
     var cv: CV? {
         didSet {
             guard let cv = cv else { return }
@@ -96,30 +93,30 @@ class TitleFieldCell: UICollectionViewCell {
     }
     
     private func updateLabelConstrains(){
-        let halfUserImageDimention: CGFloat = 50
-        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: halfUserImageDimention + offset).isActive = true 
-        nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: offset * 2).isActive = true
+        let halfUserImageDimention: CGFloat = ViewServices.userImageDimention/2
+        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: halfUserImageDimention + ViewServices.offset).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: ViewServices.offset * 2).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: ViewServices.labelHeight).isActive = true
         
-        jobAndCompanyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: offset).isActive = true
+        jobAndCompanyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: ViewServices.offset).isActive = true
         jobAndCompanyLabel.leftAnchor.constraint(equalTo: nameLabel.leftAnchor).isActive = true
         jobAndCompanyLabel.rightAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
-        jobAndCompanyLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
+        jobAndCompanyLabel.heightAnchor.constraint(equalToConstant: ViewServices.labelHeight).isActive = true
         
-        addressLabel.topAnchor.constraint(equalTo: jobAndCompanyLabel.bottomAnchor, constant: offset).isActive = true
+        addressLabel.topAnchor.constraint(equalTo: jobAndCompanyLabel.bottomAnchor, constant: ViewServices.offset).isActive = true
         addressLabel.leftAnchor.constraint(equalTo: jobAndCompanyLabel.leftAnchor).isActive = true
         addressLabel.rightAnchor.constraint(equalTo: jobAndCompanyLabel.rightAnchor).isActive = true
-        addressLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
+        addressLabel.heightAnchor.constraint(equalToConstant: ViewServices.labelHeight).isActive = true
         
-        educationLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: offset).isActive = true
+        educationLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: ViewServices.offset).isActive = true
         educationLabel.leftAnchor.constraint(equalTo: addressLabel.leftAnchor).isActive = true
         educationLabel.rightAnchor.constraint(equalTo: addressLabel.rightAnchor).isActive = true
-        educationLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
+        educationLabel.heightAnchor.constraint(equalToConstant: ViewServices.labelHeight).isActive = true
         
-        emailLabel.topAnchor.constraint(equalTo: educationLabel.bottomAnchor, constant: offset).isActive = true
+        emailLabel.topAnchor.constraint(equalTo: educationLabel.bottomAnchor, constant: ViewServices.offset).isActive = true
         emailLabel.leftAnchor.constraint(equalTo: educationLabel.leftAnchor).isActive = true
         emailLabel.rightAnchor.constraint(equalTo: educationLabel.rightAnchor).isActive = true
-        emailLabel.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
+        emailLabel.heightAnchor.constraint(equalToConstant: ViewServices.labelHeight).isActive = true
     } 
 }

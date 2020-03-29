@@ -12,7 +12,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     // MARK: -Variables
     let service = NetworkServices()
     var cv: CV?
-    var headerView: HeaderView?
+    weak var headerView: HeaderView?
     var firstCell: TitleFieldCell?
     
     private let educationCellIdentifier = "EducationReusableCell"
@@ -57,14 +57,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             return cell
             }
         case 1: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: experienceCellIdentifier, for: indexPath) as? ExperienceEducationReusableCell {
-            cell.cv = cv
             cell.cellTypeVariable = .Experience
+            cell.cv = cv
             return cell
             }
             
         case 2: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: educationCellIdentifier, for: indexPath) as? ExperienceEducationReusableCell {
-            cell.cv = cv
             cell.cellTypeVariable = .Education
+            cell.cv = cv
             return cell
             }
         case 3: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: languaugeCellIdentifier, for: indexPath) as? LanguagesCell {
@@ -78,16 +78,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if let multiplier = cv?.experience.count {
-            switch indexPath.item {
-            case 0:
-            return CGSize(width: view.frame.width , height: 160)
-            case 1...2: return CGSize(width: view.frame.width , height: CGFloat((Int(view.frame.height)/multiplier) + 10 * multiplier))
-            case 3: return CGSize(width: view.frame.width , height:90)
-            default: return CGSize(width: view.frame.width , height: CGFloat((Int(view.frame.height)/multiplier) + 10 * multiplier))
-            }
-        }
-        return CGSize(width: view.frame.width , height: view.frame.height * 0.3)
+        return getHeightForItemAt(indexPath: indexPath)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -97,6 +88,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        
+        guard offsetY < 0 else {
+            return }
+        
         setupImageConstrains()
     }
     
@@ -104,8 +100,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return .init(width: view.frame.width, height: 250)
     }
     
+    
     // MARK:- Private Helper Methods
     private func setUpViews(){
+        print(collectionView.frame.height/2)
         navigationItem.title = "Home"
         collectionView.backgroundColor = .clear
         view.backgroundColor = .backgroundColor
@@ -142,9 +140,30 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         if let header = headerView {
             collectionView.addSubview(userImage)
             userImage.bottomAnchor.constraint(equalTo: header.bottomAnchor, constant: imageDimention/2).isActive = true
-            userImage.leftAnchor.constraint(equalTo: header.leftAnchor, constant: header.offset).isActive = true
+            userImage.leftAnchor.constraint(equalTo: header.leftAnchor, constant: ViewServices.offset).isActive = true
             userImage.heightAnchor.constraint(equalToConstant: imageDimention).isActive = true
             userImage.widthAnchor.constraint(equalToConstant: imageDimention).isActive = true
+        }
+    }
+    
+    private func getHeightForItemAt(indexPath: IndexPath) -> CGSize {
+        let width = view.frame.width
+        switch indexPath.item {
+        case 0: let height = CGFloat((5 * ViewServices.labelHeight) + (8 * ViewServices.offset ) + ViewServices.userImageDimention/2)
+            return CGSize(width: width, height: height )
+        case 1:
+            let experienceCount: CGFloat = CGFloat(cv?.experience.count ?? 3)
+            let height = CGFloat((experienceCount * 3 * ViewServices.shortLabelHeight) + (15 * ViewServices.offset ) + ViewServices.labelHeight)
+            return CGSize(width: width, height: height )
+        case 2:
+            let eeducationCount: CGFloat = CGFloat(cv?.education.count ?? 3)
+            let height = CGFloat((eeducationCount * 3 * ViewServices.shortLabelHeight) + (15 * ViewServices.offset ) + ViewServices.labelHeight)
+            return CGSize(width: width, height: height )
+        case 3:
+            let height = CGFloat((2 * ViewServices.shortLabelHeight) + (2 * ViewServices.labelHeight) + (7 * ViewServices.offset ))
+            return CGSize(width: width, height: height)
+        default:
+            return CGSize(width: width, height: 100)
         }
     }
 }

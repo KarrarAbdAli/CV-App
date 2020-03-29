@@ -9,7 +9,7 @@
 import UIKit
 
 class StretchyHeaderLayout: UICollectionViewFlowLayout {
-
+    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let layoutAttribute = super.layoutAttributesForElements(in: rect)
         layoutAttribute?.forEach({ (attributes) in
