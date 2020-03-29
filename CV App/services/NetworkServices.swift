@@ -23,7 +23,7 @@ class NetworkServices{
                         let cv = try JSONDecoder().decode(CV.self, from: data)
                         completion(.success(cv))
                     } catch {
-                        completion(.failure(NetworkingErrors.jsonPursingError))
+                        completion(.failure(NetworkingErrors.jsonParsingError))
                     }
                 }
             }

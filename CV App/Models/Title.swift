@@ -18,7 +18,7 @@ class Title: Decodable{
     var git: String
     
     init(nameAndSurname: String, jobTitle: String, email: String, phoneNumber: Int, address: String , linkedIn: String, skype: String, git: String) {
-
+        
         self.nameAndSurname = nameAndSurname
         self.jobTitle = jobTitle
         self.email = email

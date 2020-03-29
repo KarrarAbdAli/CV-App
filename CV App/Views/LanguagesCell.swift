@@ -67,16 +67,10 @@ class LanguagesCell: UICollectionViewCell {
         return label
     }()
     
-    let lineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .lightGray
-        return view
-    }()
     //MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -88,20 +82,18 @@ class LanguagesCell: UICollectionViewCell {
         contentView.backgroundColor = .white
         contentView.addSubview(cellTitleLabel)
         contentView.addSubview(numberOfLanguagesLabel)
-        contentView.addSubview(lineView)
         contentView.addSubview(motherLanguageLabel)
         contentView.addSubview(languagesTitleLabel)
         contentView.addSubview(nativeLanguageStatementLabel)
         
         cellTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ViewServices.offset).isActive = true
-        cellTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: ViewServices.offset).isActive = true
+        cellTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: ViewServices.doubleOffset).isActive = true
         cellTitleLabel.heightAnchor.constraint(equalToConstant: ViewServices.labelHeight).isActive = true
         
         numberOfLanguagesLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: ViewServices.offset * 4 ).isActive = true
         numberOfLanguagesLabel.topAnchor.constraint(equalTo: cellTitleLabel.bottomAnchor).isActive = true
         numberOfLanguagesLabel.heightAnchor.constraint(equalToConstant: 65).isActive = true
         numberOfLanguagesLabel.widthAnchor.constraint(equalToConstant: 65).isActive = true
-        
         
         languagesTitleLabel.leftAnchor.constraint(equalTo: numberOfLanguagesLabel.rightAnchor).isActive = true
         languagesTitleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true

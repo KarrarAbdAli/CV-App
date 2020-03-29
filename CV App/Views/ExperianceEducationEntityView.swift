@@ -10,7 +10,7 @@ import UIKit
 
 class ExperianceEducationEntityView: UIView {
     //MARK: - Variable
-
+    
     lazy var logoImageDimention: CGFloat =  {
         let numberOfLabels: CGFloat = 3
         let numberOfOffsetsBetweenLabels: CGFloat = 2
@@ -90,12 +90,12 @@ class ExperianceEducationEntityView: UIView {
         }
         
         logoImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        logoImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: ViewServices.offset * 2 ).isActive = true
+        logoImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: ViewServices.doubleOffset ).isActive = true
         logoImageView.widthAnchor.constraint(equalToConstant: logoImageDimention).isActive = true
         logoImageView.heightAnchor.constraint(equalToConstant: logoImageDimention).isActive = true
         
         titleLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: logoImageView.rightAnchor, constant: ViewServices.offset * 2).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: logoImageView.rightAnchor, constant: ViewServices.doubleOffset).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: ViewServices.shortLabelHeight).isActive = true
         

@@ -17,4 +17,7 @@ class ViewServices {
     
     static let offset: CGFloat = 5
     
+    static let doubleOffset: CGFloat = 10
+    
+    static let lineViewWidth: CGFloat = 1
 }

@@ -21,6 +21,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     private let titleFieldCellIdentifier = "TitleFieldCell"
     private let headerViewIdentifier = "headerId"
     private let languaugeCellIdentifier = "LanguageCell"
+    private let strengthCellIdentifier = "StrengthsCell"
     //MARK:- VIEWS
     
     lazy var userImage: UIImageView = {
@@ -46,7 +47,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     // MARK: - CollectionView delegate and DataSource Methods
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,6 +69,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             return cell
             }
         case 3: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: languaugeCellIdentifier, for: indexPath) as? LanguagesCell {
+            cell.cv = cv
+            return cell
+            }
+        case 4: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: strengthCellIdentifier, for: indexPath) as? StrengthsCell {
             cell.cv = cv
             return cell
             }
@@ -113,6 +118,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView.register(ExperienceEducationReusableCell.self, forCellWithReuseIdentifier: educationCellIdentifier)
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerViewIdentifier)
         collectionView.register(LanguagesCell.self, forCellWithReuseIdentifier: languaugeCellIdentifier)
+        collectionView.register(StrengthsCell.self, forCellWithReuseIdentifier: strengthCellIdentifier)
         collectionView.contentInsetAdjustmentBehavior = .never
     }
     
@@ -150,7 +156,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         let width = view.frame.width
         switch indexPath.item {
         case 0: let height = CGFloat((5 * ViewServices.labelHeight) + (8 * ViewServices.offset ) + ViewServices.userImageDimention/2)
-            return CGSize(width: width, height: height )
+        return CGSize(width: width, height: height )
         case 1:
             let experienceCount: CGFloat = CGFloat(cv?.experience.count ?? 3)
             let height = CGFloat((experienceCount * 3 * ViewServices.shortLabelHeight) + (15 * ViewServices.offset ) + ViewServices.labelHeight)
@@ -162,8 +168,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         case 3:
             let height = CGFloat((2 * ViewServices.shortLabelHeight) + (2 * ViewServices.labelHeight) + (7 * ViewServices.offset ))
             return CGSize(width: width, height: height)
+        case 4: let height: CGFloat =  9 * ViewServices.labelHeight + 9 * ViewServices.offset
+        return CGSize(width: width, height: height)
         default:
-            return CGSize(width: width, height: 100)
+            return CGSize(width: width, height: 900)
         }
     }
 }

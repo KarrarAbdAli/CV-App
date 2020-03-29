@@ -28,6 +28,7 @@
 		C782C883242D6E0C0000C83A /* ExperienceEducationReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C782C882242D6E0C0000C83A /* ExperienceEducationReusableCell.swift */; };
 		C782C885242D74790000C83A /* TitleFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C782C884242D74790000C83A /* TitleFieldCell.swift */; };
 		C7AE319B2430E14100E38523 /* ViewServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE319A2430E14100E38523 /* ViewServices.swift */; };
+		C7AE319D2430F01100E38523 /* StrengthsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE319C2430F01100E38523 /* StrengthsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		C782C882242D6E0C0000C83A /* ExperienceEducationReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEducationReusableCell.swift; sourceTree = "<group>"; };
 		C782C884242D74790000C83A /* TitleFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFieldCell.swift; sourceTree = "<group>"; };
 		C7AE319A2430E14100E38523 /* ViewServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewServices.swift; sourceTree = "<group>"; };
+		C7AE319C2430F01100E38523 /* StrengthsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				C7AE31992430E0F600E38523 /* LayoutSetting */,
-				C71B43D42430419500A7580C /* Extensions+ */,
 				C70EF193242BE94F00061FCF /* Info.plist */,
 				C70EF18E242BE94F00061FCF /* Assets.xcassets */,
 				C70EF199242C093A00061FCF /* Controllers */,
@@ -121,14 +122,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C71B43D42430419500A7580C /* Extensions+ */ = {
-			isa = PBXGroup;
-			children = (
-				C71B43D5243041B800A7580C /* Colors+Extension.swift */,
-			);
-			path = "Extensions+";
-			sourceTree = "<group>";
-		};
 		C74679DF242C95E900375C16 /* services */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C74679E3242C9AD000375C16 /* NetworkinErrors.swift */,
+				C71B43D5243041B800A7580C /* Colors+Extension.swift */,
 			);
 			path = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -155,6 +149,7 @@
 				C70F2E2B242EEBF300CD3A18 /* ExperianceEducationEntityView.swift */,
 				C71B43D0242FD62F00A7580C /* HeaderView.swift */,
 				C71B43D7243046CA00A7580C /* LanguagesCell.swift */,
+				C7AE319C2430F01100E38523 /* StrengthsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +249,7 @@
 				C74679DE242C918E00375C16 /* CV.swift in Sources */,
 				C70F2E2C242EEBF300CD3A18 /* ExperianceEducationEntityView.swift in Sources */,
 				C7AE319B2430E14100E38523 /* ViewServices.swift in Sources */,
+				C7AE319D2430F01100E38523 /* StrengthsCell.swift in Sources */,
 				C70EF19C242C098B00061FCF /* Title.swift in Sources */,
 				C782C885242D74790000C83A /* TitleFieldCell.swift in Sources */,
 				C71B43D8243046CA00A7580C /* LanguagesCell.swift in Sources */,

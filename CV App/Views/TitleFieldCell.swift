@@ -95,7 +95,7 @@ class TitleFieldCell: UICollectionViewCell {
     private func updateLabelConstrains(){
         let halfUserImageDimention: CGFloat = ViewServices.userImageDimention/2
         nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: halfUserImageDimention + ViewServices.offset).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: ViewServices.offset * 2).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: ViewServices.doubleOffset).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: ViewServices.labelHeight).isActive = true
         

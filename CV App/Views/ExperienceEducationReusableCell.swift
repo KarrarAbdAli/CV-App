@@ -32,7 +32,7 @@ class ExperienceEducationReusableCell: UICollectionViewCell {
     
     var cellTypeVariable: CellType?
     private var isViewsAdded = false
-
+    
     //MARK: - Views
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -73,7 +73,7 @@ class ExperienceEducationReusableCell: UICollectionViewCell {
         containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: ViewServices.offset).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: ViewServices.offset * 2).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: ViewServices.doubleOffset).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: ViewServices.offset).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: ViewServices.labelHeight).isActive = true
         var entities: [ExperianceEducationEntityView] = []

@@ -9,5 +9,5 @@
 import Foundation
 enum NetworkingErrors: Error {
     case networkErrorTaskError
-    case jsonPursingError
+    case jsonParsingError
 }
