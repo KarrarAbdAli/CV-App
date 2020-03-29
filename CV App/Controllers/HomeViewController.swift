@@ -20,6 +20,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     private let emptyCellIdentifier = "emptyCell"
     private let titleFieldCellIdentifier = "TitleFieldCell"
     private let headerViewIdentifier = "headerId"
+    private let languaugeCellIdentifier = "LanguageCell"
     //MARK:- VIEWS
     
     lazy var userImage: UIImageView = {
@@ -45,7 +46,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     // MARK: - CollectionView delegate and DataSource Methods
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,6 +67,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             cell.cellTypeVariable = .Education
             return cell
             }
+        case 3: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: languaugeCellIdentifier, for: indexPath) as? LanguagesCell {
+            cell.cv = cv
+            return cell
+            }
         default:
             return collectionView.dequeueReusableCell(withReuseIdentifier: emptyCellIdentifier, for: indexPath)
         }
@@ -77,7 +82,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             switch indexPath.item {
             case 0: print(indexPath)
             return CGSize(width: view.frame.width , height: view.frame.height * 0.2)
-            case 1: return CGSize(width: view.frame.width , height: CGFloat((Int(view.frame.height)/multiplier) + 10 * multiplier))
+            case 1...2: return CGSize(width: view.frame.width , height: CGFloat((Int(view.frame.height)/multiplier) + 10 * multiplier))
+            case 3: return CGSize(width: view.frame.width , height:90)
             default: return CGSize(width: view.frame.width , height: CGFloat((Int(view.frame.height)/multiplier) + 10 * multiplier))
             }
         }
@@ -108,9 +114,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView.register(ExperienceEducationReusableCell.self, forCellWithReuseIdentifier: experienceCellIdentifier)
         collectionView.register(ExperienceEducationReusableCell.self, forCellWithReuseIdentifier: educationCellIdentifier)
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerViewIdentifier)
+        collectionView.register(LanguagesCell.self, forCellWithReuseIdentifier: languaugeCellIdentifier)
         collectionView.contentInsetAdjustmentBehavior = .never
     }
-
+    
     
     //MARK:- Helper methods
     private func fetchingData(){
