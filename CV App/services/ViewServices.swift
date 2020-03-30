@@ -20,4 +20,6 @@ class ViewServices {
     static let doubleOffset: CGFloat = 10
     
     static let lineViewWidth: CGFloat = 1
+    
+    static let logoImageDimention: CGSize = CGSize(width: 70 , height: 70)
 }

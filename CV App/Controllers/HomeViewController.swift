@@ -105,10 +105,19 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return .init(width: view.frame.width, height: 250)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item == 1 {
+            guard let experiences = cv?.experience else{ return }
+            let nc = UINavigationController(rootViewController: ExperienceDetailsTableViewController(experiences: experiences))
+            nc.modalPresentationStyle = .fullScreen
+            nc.modalTransitionStyle = .crossDissolve
+            present(nc, animated:  true)
+        }
+    }
+    
     
     // MARK:- Private Helper Methods
     private func setUpViews(){
-        print(collectionView.frame.height/2)
         navigationItem.title = "Home"
         collectionView.backgroundColor = .clear
         view.backgroundColor = .backgroundColor
@@ -121,7 +130,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView.register(StrengthsCell.self, forCellWithReuseIdentifier: strengthCellIdentifier)
         collectionView.contentInsetAdjustmentBehavior = .never
     }
-    
     
     //MARK:- Helper methods
     private func fetchingData(){

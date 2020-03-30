@@ -40,7 +40,6 @@ class StrengthsCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -92,8 +91,6 @@ class StrengthsCell: UICollectionViewCell {
             label.font = UIFont.preferredFont(forTextStyle: .subheadline)
             label.textAlignment = .left
             label.text = "   \(title)"
-            label.layer.borderWidth = ViewServices.lineViewWidth
-            label.layer.borderColor = UIColor.backgroundColor.cgColor
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()

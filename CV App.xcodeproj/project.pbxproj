@@ -29,6 +29,8 @@
 		C782C885242D74790000C83A /* TitleFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C782C884242D74790000C83A /* TitleFieldCell.swift */; };
 		C7AE319B2430E14100E38523 /* ViewServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE319A2430E14100E38523 /* ViewServices.swift */; };
 		C7AE319D2430F01100E38523 /* StrengthsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE319C2430F01100E38523 /* StrengthsCell.swift */; };
+		C7AE319F2431846600E38523 /* ExperienceDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE319E2431846600E38523 /* ExperienceDetailsTableViewController.swift */; };
+		C7AE31A12431869700E38523 /* ExperienceDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE31A02431869700E38523 /* ExperienceDetailsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		C782C884242D74790000C83A /* TitleFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFieldCell.swift; sourceTree = "<group>"; };
 		C7AE319A2430E14100E38523 /* ViewServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewServices.swift; sourceTree = "<group>"; };
 		C7AE319C2430F01100E38523 /* StrengthsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthsCell.swift; sourceTree = "<group>"; };
+		C7AE319E2431846600E38523 /* ExperienceDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceDetailsTableViewController.swift; sourceTree = "<group>"; };
+		C7AE31A02431869700E38523 /* ExperienceDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceDetailsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				C70EF189242BE94D00061FCF /* HomeViewController.swift */,
+				C7AE319E2431846600E38523 /* ExperienceDetailsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				C71B43D0242FD62F00A7580C /* HeaderView.swift */,
 				C71B43D7243046CA00A7580C /* LanguagesCell.swift */,
 				C7AE319C2430F01100E38523 /* StrengthsCell.swift */,
+				C7AE31A02431869700E38523 /* ExperienceDetailsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 				C70EF19E242C0C1500061FCF /* Experience.swift in Sources */,
 				C71B43D1242FD62F00A7580C /* HeaderView.swift in Sources */,
 				C70EF186242BE94D00061FCF /* AppDelegate.swift in Sources */,
+				C7AE319F2431846600E38523 /* ExperienceDetailsTableViewController.swift in Sources */,
 				C71B43D6243041B800A7580C /* Colors+Extension.swift in Sources */,
+				C7AE31A12431869700E38523 /* ExperienceDetailsCell.swift in Sources */,
 				C70EF1C4242C164D00061FCF /* Education.swift in Sources */,
 				C70EF188242BE94D00061FCF /* SceneDelegate.swift in Sources */,
 				C782C883242D6E0C0000C83A /* ExperienceEducationReusableCell.swift in Sources */,
